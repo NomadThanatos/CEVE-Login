@@ -2,14 +2,18 @@ fs = require("fs");
 yaml = require("js-yaml");
 {encrypt, decrypt} = require("triplesec");
 
-module.exports.loadConfig = loadConfig(fileLocation, key) ->
-  decrypt { key, data : fs.readFileSync(fileLocation) }, (err, raw) ->
-    #if (err) throw err;
-    doc = yaml.safeload(data);
+loadConfig = (fileLocation, key, callback) ->
+  fileString = fs.readFileSync(fileLocation)
+  data = new Buffer fileString
+  decrypt { key, data }, (err, raw) ->
+    cb null, err if err
+    doc = yaml.safeLoad(raw.toString("utf8"));
+    cb doc, null;
 
-#module.exports.saveConfig = saveConfig(fileLocation, key, doc) ->
-#  raw = yaml.safedump(doc);
-#  encrypt { key, data: raw }, (err, ciphertext) ->
-#    #if (err) throw err;
-#    fs.writeFileSync(fileLocation, raw, err) ->
-#      if (err) throw err;
+saveConfig = (fileLocation, key, doc) ->
+  raw = new Buffer yaml.safeDump(doc);
+  encrypt { key, data: raw }, (err, ciphertext) ->
+    throw err if err
+    fs.writeFileSync(fileLocation, ciphertext)
+
+module.exports = {loadConfig, saveConfig}
