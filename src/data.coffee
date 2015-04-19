@@ -2,7 +2,7 @@ fs = require("fs");
 yaml = require("js-yaml");
 {encrypt, decrypt} = require("triplesec");
 
-loadConfig = (fileLocation, key, callback) ->
+loadConfig = (fileLocation, key, cb) ->
   fileString = fs.readFileSync(fileLocation)
   data = new Buffer fileString
   decrypt { key, data }, (err, raw) ->
