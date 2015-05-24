@@ -1,0 +1,61 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    color:#555;
+    background: #F8F8F8;
+    margin: 0;
+    padding: 0;
+}
+
+
+.table {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.tableRow1 {
+    display: table-row;
+    height: 80%;
+    width: 100%;
+}
+
+.tableRow2 {
+    display: table-row;
+    height: 20%;
+    width: 100%;
+}
+
+.selectBox {
+    width: 40%;
+    display: table-cell;
+}
+
+select {
+    width: 100%;
+}
+
+#moveButton {
+    width: 20%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#moveButton button {
+    width: 100%;
+}
+
+
+.tableRow2 div {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.tableRow2 button {
+    height: 90%;
+    width: 90%;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <title>CEVE启动器</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="table">
+      <div class="tableRow1">
+	<div id="common" class="selectBox">
+	  <select id="commonSelect" size="20" multiple="multiple">
+	  </select>
+	</div>
+
+	<div id="moveButton">
+	  <button id="moveLeft" type="button">&lt;&lt;</button>
+	  <button id="moveRight" type="button">&gt;&gt;</button>
+	  <button id="addAccount" type="button">添加</button>
+	  <button id="saveLayout" type="button">保存</button>
+	  <button id="delAccount" type="button">删除</button>
+	  <button id="modifyPath" type="button">修改游戏路径</button>
+	  <button id="modifyPassword" type="button">修改本地密码</button>
+	</div>
+	
+	<div id="uncommon" class="selectBox">
+	  <select id="uncommonSelect" size="20" multiple="multiple">
+	  </select>
+	</div>
+	
+      </div>
+      <div class="tableRow2">
+	<div id="bl">
+	  <button id="startCommon" type="button">启动↑</button>
+	</div>
+	
+	<div id="bc">
+	  <button id="startSelected" type="button">启动选中</button>
+	</div>
+	
+	<div id="bl">
+	  <button id="startUncommon" type="button">启动↑</button>
+	</div>
+      </div>
+    </div>
+    <script type="text/javascript" charset="utf-8" src="../lib/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../lib/index.js"></script>
+  </body>
+</html>

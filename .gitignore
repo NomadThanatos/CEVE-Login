@@ -27,6 +27,5 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 data.dat
-src/test.coffee
-src/test.yaml
-src/response
+test/
+build/
